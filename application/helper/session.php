@@ -77,7 +77,7 @@ class Session
     public static function updateSessionId($userId, $sessionId = null)
     {
         $database = Db::getInstance();
-        $sql = "UPDATE users SET session_id = :session_id WHERE user_id = :user_id";
+        $sql = "UPDATE tv_users SET session_id = :session_id WHERE ID = :user_id";
 
         $query = $database->prepare($sql);
         $query->execute(array(':session_id' => $sessionId, ":user_id" => $userId));
@@ -104,12 +104,12 @@ class Session
     public static function isConcurrentSessionExists()
     {
         $session_id = session_id();
-        $userId     = Session::get('user_id');
+        $userId     = Session::get('id');
 
         if (isset($userId) && isset($session_id)) {
 
             $database = Db::getInstance();
-            $sql = "SELECT session_id FROM users WHERE user_id = :user_id LIMIT 1";
+            $sql = "SELECT session_id FROM tv_users WHERE ID = :user_id LIMIT 1";
 
             $query = $database->prepare($sql);
             $query->execute(array(":user_id" => $userId));
@@ -130,6 +130,6 @@ class Session
      */
     public static function userIsLoggedIn()
     {
-        return (self::get('user_logged_in') ? true : false);
+        return (self::get('logged_in') ? true : false);
     }
 }

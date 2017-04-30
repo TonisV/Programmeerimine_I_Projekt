@@ -9,6 +9,8 @@ function call($controller, $action) {
             break;
 
         case 'account':
+            require_once('application/model/user.php');
+            require_once('application/model/account.php');
             $controller = new AccountController();
             break;
 

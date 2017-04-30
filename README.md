@@ -1,4 +1,4 @@
-# Programmeerimine I Projekt
+# Programmeerimine I - Projekt
 HKI5002 Programmeerimine I - Projekt
 
 Projekti teema - Arvutiparanduses kasutatav tehniku tööleht.

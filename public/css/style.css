@@ -35,6 +35,36 @@ body {
     padding: 20px 0;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid #c3c3c3;
+}
+th, td {
+    text-align: left;
+}
+th:first-child,
+td:first-child {
+    text-align: center;
+}
+th:last-child,
+td:last-child {
+    text-align: right;
+}
+tr:last-child td {
+    background-color: rgba(212, 165, 88, 0.12);
+    padding: 0;
+}
+td, th {
+    padding: 10px 20px;
+}
+th {
+    text-transform: uppercase;
+    border-bottom: 2px solid #d4a558;
+}
+
 /*-- 2. Text formats --*/
 
 /*-- 3. Buttons --*/

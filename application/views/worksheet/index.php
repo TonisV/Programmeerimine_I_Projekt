@@ -1,1 +1,54 @@
-<h2>Tööleht</h2>
+<div class="container">
+    <h2>Tööleht</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Töö nr.</th>
+                <th>Nimi</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Seadmed</th>
+                <th>Vead</th>
+                <th>Tööd</th>
+                <th>Hind</th>
+                <th>Arve</th>
+                <th>Vastuvõetud</th>
+                <th>Väljastatud</th>
+                <th>Hetkeseis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

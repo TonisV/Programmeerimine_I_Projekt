@@ -104,7 +104,7 @@ class Session
     public static function isConcurrentSessionExists()
     {
         $session_id = session_id();
-        $userId     = Session::get('id');
+        $userId     = Session::get('user_id');
 
         if (isset($userId) && isset($session_id)) {
 
@@ -130,6 +130,6 @@ class Session
      */
     public static function userIsLoggedIn()
     {
-        return (self::get('logged_in') ? true : false);
+        return (self::get('is_logged_in') ? true : false);
     }
 }

@@ -30,7 +30,14 @@ $controllers = array(
 
 if (array_key_exists($controller, $controllers)) {
     if (in_array($action, $controllers[$controller])) {
-        call($controller, $action);
+
+        // Allow only logged in users to views pages
+        if(!Session::get('is_logged_in')){
+            call('account', 'login');
+        } else {
+            call($controller, $action);
+        }
+
     } else {
         call('pages', 'error');
     }

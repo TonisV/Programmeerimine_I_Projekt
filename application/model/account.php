@@ -26,11 +26,11 @@ class AccountModel {
         session_regenerate_id(true);
         $_SESSION = array();
 
-        Session::set('id', $id);
-        Session::set('name', $name);
-        Session::set('email', $email);
+        Session::set('user_id', $id);
+        Session::set('user_name', $name);
+        Session::set('user_email', $email);
 
-        Session::set('logged_in', true);
+        Session::set('is_logged_in', true);
 
         Session::updateSessionId($id, session_id());
 
@@ -60,7 +60,7 @@ class AccountModel {
     }
 
     public static function logout() {
-        $user_id = Session::get('id');
+        $user_id = Session::get('user_id');
 
         Session::destroy();
         Session::updateSessionId($user_id);

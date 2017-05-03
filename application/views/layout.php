@@ -35,7 +35,7 @@
             </nav>
             <nav class="side-nav">
                 <ul class="menu">
-                    <li class="menu__item"><a class="fa-user" href="">Kasutaja</a></li>
+                    <li class="menu__item"><a class="fa-user" href=""><?= Session::get('user_name'); ?></a></li>
                     <li class="menu__item"><a class="fa-sign-out" href="<?= APP_URL ?>?controller=account&action=logout">Logi välja</a></li>
                 </ul>
             </nav>
@@ -45,10 +45,7 @@
         </header>
 
         <main>
-            <?php
-                echo $appFeedback;
-                require_once('application/lib/routes.php');
-            ?>
+            <?php require_once('application/lib/routes.php'); ?>
         </main>
 
         <footer>

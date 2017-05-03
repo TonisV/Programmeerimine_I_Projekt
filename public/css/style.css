@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 95%;
     min-height: 500px;
     margin: 0 auto;
     padding: 20px 0;
@@ -39,31 +39,27 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-table, th, td {
-    border: 1px solid #c3c3c3;
+
+th {
+    padding: 10px 20px;
+    background-color: rgba(67, 72, 80, 0.42);
+    color: #949494;
 }
+
 th, td {
-    text-align: left;
+    border: 5px solid rgb(46, 50, 56);
 }
-th:first-child,
-td:first-child {
+
+td {
     text-align: center;
 }
-th:last-child,
-td:last-child {
-    text-align: right;
-}
+
 tr:last-child td {
-    background-color: rgba(212, 165, 88, 0.12);
+    background-color: rgb(74, 77, 84);
     padding: 0;
 }
-td, th {
-    padding: 10px 20px;
-}
-th {
-    text-transform: uppercase;
-    border-bottom: 2px solid #d4a558;
-}
+
+
 
 /*-- 2. Text formats --*/
 
@@ -90,7 +86,7 @@ th {
 
 /*-- 4. Form inputs --*/
 
-input {
+input, select {
     width: 100%;
     border: 1px solid #4a4d54;
     padding: 10px;
@@ -99,6 +95,10 @@ input {
     display: block;
     background-color: #4a4d54;
     color: #fff;
+}
+
+select {
+    margin-bottom: 0;
 }
 
 input:focus {

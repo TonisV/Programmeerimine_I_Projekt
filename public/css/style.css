@@ -54,13 +54,25 @@ td {
     text-align: center;
 }
 
-tr:last-child td {
+tr td {
     background-color: rgb(74, 77, 84);
     padding: 0;
 }
 
+tfoot td {
+    background-color: #2d2f33;
+    color: #8b9194;
+}
 
+tfoot td select,
+tfoot td input {
+    background-color: #2d2f33;
+    border-color: transparent;
+}
 
+td .status_wait {
+    background-color: #891d21;
+}
 /*-- 2. Text formats --*/
 
 /*-- 3. Buttons --*/
@@ -90,7 +102,6 @@ input, select {
     width: 100%;
     border: 1px solid #4a4d54;
     padding: 10px;
-    margin-bottom: 10px;
     border-radius: 3px;
     display: block;
     background-color: #4a4d54;
@@ -166,10 +177,22 @@ header {
 main {
     background-color: #2e3238;
 }
-
+/* Login */
 .login-form {
     width: 200px;
     margin: 15vh auto;
+}
+
+#user_name {
+    margin-bottom: 10px;
+}
+
+/* Worksheet table */
+work-table {
+
+}
+.work-table input:focus {
+    outline-color: #89541d;
 }
 
 /*-- 7. Footer elements --*/

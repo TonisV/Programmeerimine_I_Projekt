@@ -24,11 +24,11 @@
                 <td><input name="client_name" type="text" value="Test Test" disabled /></td>
                 <td><input name="client_phone" type="text" value="580 00000" disabled /></td>
                 <td><input name="client_email" type="text" value="test@test.ee" disabled /></td>
-                <td><input name="job_equipment" type="text" value="Sülearvuti Lenovo T420 + laadija" disabled /></td>
-                <td><input name="job_problem" type="text" value="Ei lae viirused, pahavara" disabled /></td>
-                <td><input name="job_work" type="text" value="Tehtud hooldus" disabled /></td>
-                <td><input name="job_price" type="number" value="65.00" disabled /></td>
-                <td><input name="job_invoice" type="number" value="2555" disabled /></td>
+                <td><input name="work_device" type="text" value="Sülearvuti Lenovo T420 + laadija" disabled /></td>
+                <td><input name="work_description" type="text" value="Ei lae viirused, pahavara" disabled /></td>
+                <td><input name="work_report" type="text" value="Tehtud hooldus" disabled /></td>
+                <td><input name="work_price" type="number" value="65.00" disabled /></td>
+                <td><input name="work_invoice" type="number" value="2555" disabled /></td>
                 <td>04.05.2017 10:50</td>
                 <td> - </td>
                 <td>

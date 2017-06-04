@@ -5,17 +5,18 @@ function call($controller, $action) {
 
     switch ($controller) {
         case 'pages':
-            $controller = new PagesController();
+            $controller = new Pages_Controller();
             break;
 
         case 'account':
             require_once('application/model/user.php');
             require_once('application/model/account.php');
-            $controller = new AccountController();
+            $controller = new Account_Controller();
             break;
 
         case 'worksheet':
-            $controller = new WorksheetController();
+            require_once('application/model/worksheet.php');
+            $controller = new Worksheet_Controller();
             break;
 
     }

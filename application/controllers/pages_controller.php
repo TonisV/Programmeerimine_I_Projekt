@@ -1,5 +1,5 @@
 <?php
-class PagesController {
+class Pages_Controller {
 
     function index() {
 

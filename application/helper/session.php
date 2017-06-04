@@ -74,9 +74,9 @@ class Session
      * @param  string $userId
      * @param  string $sessionId
      */
-    public static function updateSessionId($userId, $sessionId = null)
+    public static function update_session_id($userId, $sessionId = null)
     {
-        $database = Db::getInstance();
+        $database = Db::get_instance();
         $sql = "UPDATE tv_users SET session_id = :session_id WHERE ID = :user_id";
 
         $query = $database->prepare($sql);
@@ -101,14 +101,14 @@ class Session
      * @see Session::updateSessionId()
      * @see http://stackoverflow.com/questions/6126285/php-stop-concurrent-user-logins
      */
-    public static function isConcurrentSessionExists()
+    public static function is_concurrent_session_exists()
     {
         $session_id = session_id();
         $userId     = Session::get('user_id');
 
         if (isset($userId) && isset($session_id)) {
 
-            $database = Db::getInstance();
+            $database = Db::get_instance();
             $sql = "SELECT session_id FROM tv_users WHERE ID = :user_id LIMIT 1";
 
             $query = $database->prepare($sql);
@@ -128,7 +128,7 @@ class Session
      *
      * @return bool user's login status
      */
-    public static function userIsLoggedIn()
+    public static function user_is_logged_in()
     {
         return (self::get('is_logged_in') ? true : false);
     }

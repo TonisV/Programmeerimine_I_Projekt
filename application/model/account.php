@@ -1,6 +1,6 @@
 <?php
 
-class AccountModel {
+class Account_Model {
 
     public static function login($name, $pass) {
 
@@ -8,18 +8,18 @@ class AccountModel {
             return false;
         }
 
-        $valid_user = self::validateAndGetUser($name, $pass);
+        $valid_user = self::validate_and_get_user($name, $pass);
 
         if(!$valid_user) {
             return false;
         }
 
-        self::setSessionLogin($valid_user['ID'], $valid_user['user_login'], $valid_user['user_email']);
+        self::set_session_login($valid_user['ID'], $valid_user['user_login'], $valid_user['user_email']);
 
         return $valid_user;
     }
 
-    private static function setSessionLogin($id, $name, $email) {
+    private static function set_session_login($id, $name, $email) {
 
         Session::init();
 
@@ -32,7 +32,7 @@ class AccountModel {
 
         Session::set('is_logged_in', true);
 
-        Session::updateSessionId($id, session_id());
+        Session::update_session_id($id, session_id());
 
         setcookie(
             session_name(),
@@ -45,8 +45,8 @@ class AccountModel {
         );
     }
 
-    private static function validateAndGetUser($name, $pass) {
-        $user = UserModel::getUserByUsername($name);
+    private static function validate_and_get_user($name, $pass) {
+        $user = User_Model::get_user_by_username($name);
 
         if(!$user) {
             return false;
@@ -63,11 +63,11 @@ class AccountModel {
         $user_id = Session::get('user_id');
 
         Session::destroy();
-        Session::updateSessionId($user_id);
+        Session::update_session_id($user_id);
     }
 
-    public static function isLoggedIn() {
-        return Session::userIsLoggedIn();
+    public static function is_logged_in() {
+        return Session::user_is_logged_in();
     }
 
 }

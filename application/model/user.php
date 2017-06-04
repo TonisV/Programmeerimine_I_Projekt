@@ -1,5 +1,5 @@
 <?php
-class UserModel {
+class User_Model {
 
     // User parameters
     public $id;
@@ -17,9 +17,9 @@ class UserModel {
     }
 
     // Get user from database by username
-    public static function getUserByUsername($name) {
+    public static function get_user_by_username($name) {
 
-        $db = Db::getInstance();
+        $db = Db::get_instance();
 
         $sql = "SELECT ID, user_login, user_email, user_pass, user_registered, user_status FROM tv_users WHERE user_login = :name LIMIT 1";
 

@@ -4,9 +4,7 @@
 *
 */
 
-$(function() {
 
-});
 
 
 /* Double click events in rows */
@@ -35,17 +33,21 @@ $('.work-table tbody td').dblclick(function(event){
 /* Last row select event */
 $('#last-row-select').change(function(){
 
-    // Select element value
+    // Get select element value
     var selectedValue = $(this).val();
 
+    // If select element as value 2 then get all data from row and save it
     if (selectedValue === '2') {
 
-        // Find all inputs in last row an make them objects
-        var cells = $('#last-row').find(':input').serializeArray();
-        var testCell  = cells[1].value;
+        // Find all inputs in last row an make them as object
+        var cells = $('#last-row').find(':input').serialize();
 
+        // Save only if mobile number is found
+        var testCell  = cells[1].value;
         if (testCell) {
             saveNewRow(cells);
+        } else {
+            alert('mobiilinumber on kohustuslik');
         }
 
     }
@@ -58,6 +60,8 @@ function saveCell(rowId, cellName, data) {
 }
 
 function saveNewRow(cells) {
+    var formdata = JSON.stringify(cells);
+    alert (formdata);
     console.log('saved - ' + cells);
 }
 

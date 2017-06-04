@@ -23,7 +23,7 @@
         <header>
             <div class="logo"><img src="public/images/logo.png" alt="logo"></div>
 
-            <?php if(Session::userIsLoggedIn()) { ?>
+            <?php if(Session::user_is_logged_in()) { ?>
 
             <nav class="main-nav">
                 <ul class="menu">

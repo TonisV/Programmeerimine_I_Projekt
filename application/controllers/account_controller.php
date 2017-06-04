@@ -1,12 +1,12 @@
 <?php
-class AccountController {
+class Account_Controller {
 
     function index() {
         require_once('application/views/account/index.php');
     }
 
     function login() {
-        $user = AccountModel::login(
+        $user = Account_Model::login(
             Request::post('user_name'),
             Request::post('user_password')
         );
@@ -18,7 +18,7 @@ class AccountController {
     }
 
     function logout() {
-        AccountModel::logout();
+        Account_Model::logout();
         header('Location: '.APP_URL);
         exit();
     }

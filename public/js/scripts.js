@@ -33,16 +33,21 @@ $('.work-table tbody td').dblclick(function(event){
 });
 
 /* Last row select event */
-$('#last_row_select').change(function(){
+$('#last-row-select').change(function(){
 
+    // Select element value
     var selectedValue = $(this).val();
-    var cells = $('#lastrow').find(':input').serializeArray();
 
+    if (selectedValue === '2') {
 
+        // Find all inputs in last row an make them objects
+        var cells = $('#last-row').find(':input').serializeArray();
+        var testCell  = cells[1].value;
 
-    // Enable element
-    if (selectedValue === 2) {
-        saveNewRow(cells);
+        if (testCell) {
+            saveNewRow(cells);
+        }
+
     }
 
 });

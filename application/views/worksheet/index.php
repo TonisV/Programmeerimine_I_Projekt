@@ -87,7 +87,7 @@
 
         </tbody>
         <tfoot>
-            <tr id="last_row">
+            <tr id="last-row">
                 <td>0004</td>
                 <td><input name="client_name"  type="text" placeholder=" - " /></td>
                 <td><input name="client_phone"  type="text" placeholder=" - " /></td>
@@ -100,7 +100,7 @@
                 <td> - </td>
                 <td> - </td>
                 <td>
-                    <select name="job_status" id="last_row_select">
+                    <select name="job_status" id="last-row-select">
                         <option value="1"> - </option>
                         <option value="2">Vastuvõetud</option>
                     </select>

@@ -7,16 +7,25 @@ class Worksheet_Controller {
     }
 
     function insert() {
-        return $job_done = Worksheet_Model::insert_or_update_row();
+        $job_done = Worksheet_Model::insert_new_row();
+
+        if ($job_done == 'success') {
+            $new_rows = Worksheet_Model::get_last_row();
+            require_once('application/views/worksheet/new_row.php');
+        } else {
+            echo  $job_done;
+        }
     }
 
     function update() {
-        return $job_done = Worksheet_Model::insert_or_update_row();
+        $job_done = Worksheet_Model::update_row_cell();
+        echo  $job_done;
     }
 
     function delete() {
         $row_id = Request::post('work_id');
-        return $job_done = Worksheet_Model::delete_row($row_id);
+        $job_done = Worksheet_Model::delete_row($row_id);
+
     }
 
 }

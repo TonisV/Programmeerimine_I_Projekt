@@ -26,7 +26,7 @@ function call($controller, $action) {
 $controllers = array(
     'pages'     => ['index', 'error'],
     'account'   => ['index', 'login', 'logout', 'settings'],
-    'worksheet' => ['index'],
+    'worksheet' => ['index', 'insert', 'update', 'delete'],
 );
 
 if (array_key_exists($controller, $controllers)) {

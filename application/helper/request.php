@@ -28,6 +28,19 @@ class Request
     }
 
     /**
+     * Returns all keys and values from $_POST.
+     */
+    public static function postArray()
+    {
+        $post_array = [];
+        foreach ($_POST as $name => $val)
+        {
+            $post_array[$name] = $val;
+        }
+        return $post_array;
+    }
+
+    /**
      * Returns the state of a checkbox.
      *
      * @param mixed $key key

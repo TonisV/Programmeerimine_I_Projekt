@@ -57,6 +57,7 @@ td {
 tr td {
     background-color: rgb(74, 77, 84);
     padding: 0;
+    transition: background-color 0.3s linear;
 }
 
 tfoot td {
@@ -100,12 +101,13 @@ td .status_wait {
 
 input, select {
     width: 100%;
-    border: 1px solid #4a4d54;
+    border: 1px solid transparent;
     padding: 10px;
     border-radius: 3px;
     display: block;
     background-color: #4a4d54;
     color: #fff;
+    transition: background-color 0.3s linear;
 }
 
 select {
@@ -191,9 +193,29 @@ main {
 work-table {
 
 }
+.work-table-row:hover td,
+.work-table-row:hover td input {
+    background-color: #5d6067;
+}
 .work-table input:focus {
     outline-color: #89541d;
 }
+.error,
+.error select,
+.error input {
+    background-color: rgba(234, 86, 3, 0.33) !important;
+}
+.success,
+.success td,
+.success select,
+.success input {
+    background-color: #436b28 !important;
+}
+
+.paid { background-color: #436b28; }
+.waiting { background-color: #825c0c; }
+.notified { background-color: #60286b; }
+
 
 /*-- 7. Footer elements --*/
 

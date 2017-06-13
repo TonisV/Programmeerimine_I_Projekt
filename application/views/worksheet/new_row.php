@@ -11,12 +11,12 @@
         <td><input name="work_invoice" type="number" value="<?= $row->work_invoice; ?>" disabled /></td>
         <td><?= $row->work_check_in; ?></td>
         <td><?= $row->work_check_out; ?></td>
-        <td>
-            <select name="work_status">
-                <option value="1" <?= (($row->work_status == 1) ? 'selected' : ''); ?>>Vastuvõetud</option>
-                <option value="2" <?= (($row->work_status == 2) ? 'selected' : ''); ?>>Ootel</option>
-                <option value="3" <?= (($row->work_status == 3) ? 'selected' : ''); ?>>Teavitatud</option>
-                <option value="4" <?= (($row->work_status == 4) ? 'selected' : ''); ?>>Makstud ja üleantud</option>
+        <td class="select-cell">
+            <select name="work_status" class="row-select">
+                <option value="1" selected>Vastuvõetud</option>
+                <option value="2" >Ootel</option>
+                <option value="3" >Teavitatud</option>
+                <option value="4" >Makstud ja üleantud</option>
             </select>
         </td>
     </tr>

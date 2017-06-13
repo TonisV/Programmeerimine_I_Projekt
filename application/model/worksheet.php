@@ -197,11 +197,16 @@ class Worksheet_Model {
             'work_status'
         );
 
+        $timestamp = date('Y-m-d G:i:s');
+        $work_check_out_query = ", work_check_out = '".$timestamp."'";
+        $work_check_out = ($cell_name == 'work_status' && $cell['cell_value'] == 4) ? $work_check_out_query : '';
+
         if (in_array($cell_name, $valid_fields)) {
 
             $db = Db::get_instance();
 
-            $query = $db->prepare('UPDATE ws_worksheet SET '.$cell_name.' = :cell_value WHERE work_id = :cell_id');
+            $query = $db->prepare('UPDATE ws_worksheet 
+              SET '.$cell_name.' = :cell_value '.$work_check_out.' WHERE work_id = :cell_id');
 
             $query_done = $query->execute(
                 array(

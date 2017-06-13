@@ -34,7 +34,7 @@
                 <td><input name="work_invoice" type="number" value="<?= $row->work_invoice; ?>" disabled /></td>
                 <td><?= $row->work_check_in; ?></td>
                 <td><?= $row->work_check_out; ?></td>
-                <td>
+                <td class="select-cell">
                     <select name="work_status" class="row-select <?= $status_class; ?>">
                         <option value="1" <?= (($row->work_status == 1) ? 'selected' : ''); ?>>Vastuvõetud</option>
                         <option value="2" <?= (($row->work_status == 2) ? 'selected' : ''); ?>>Ootel</option>
@@ -62,7 +62,7 @@
                 <td> - </td>
                 <td> - </td>
                 <td> - </td>
-                <td>
+                <td class="select-cell">
                     <select name="work_status" id="last-row-select">
                         <option value="1"> - </option>
                         <option value="2">Vastuvõetud</option>

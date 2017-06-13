@@ -1,66 +1,44 @@
 /*
  *
  * UPDATE CELL INFO AND ERROR HANDLING
- * Validates and saves data from last-row as new row
+ *
  *
  */
-/*
+
+// Holds inputs parent selector
+//var $tableCell = $('.work-table tbody td');
+
+// Updates data from input element
 $('.work-table tbody td').dblclick(function(event){
     event.preventDefault();
-
-    var $cellInput = $(this).children('input');
-
-    var rowId      = $(this).parent().attr('id').split('-');
-    var cellName   = $cellInput.attr('name');
-    var cellData   = $cellInput.val();
-
-    // Ajax url for data handling
-    var url = '?controller=worksheet&action=update';
-
-    // Enable element
-    $cellInput.prop("disabled", false);
-
-    // After element loses focus Save new value and disable element
-    $cellInput.focusout(function () {
-
-        var cellNewData = $cellInput.val();
-        var urlString  = 'work_id='+rowId[1]+'&'+cellName+'='+cellNewData;
-
-        // Update cell info only if it is changed
-        if (cellData !== cellNewData) {
-            // Ajax  function for data sending
-            $.post(url, urlString, function (data) {
-
-                // find out if returned message contains error information
-                if (data === 'success') {
-                    // change input class if success
-                    toggleSuccessClass($cellInput);
-                } else {
-                    // log errors
-                    console.log(data);
-                    // change input class if error
-                    toggleErrorClass($cellInput);
-                }
-            }, "text");
-        }
-        // Disable element
-        $cellInput.prop("disabled", true);
-    });
-
-});*/
-
-// Updates data from input elements
-$('.work-table tbody td').dblclick(function(event){
-    event.preventDefault();
-    new UpdateCell($(this), 'input');
+    var cell = new CellData(
+        $(this),
+        'input',
+        '?controller=worksheet&action=update'
+    );
+    Query.inputUpdate(cell);
 });
 
-// Updates data from select elements
-$('.work-table tbody td').change(function(event){
+// Updates data from select element
+$('.work-table-row .select-cell').change(function(event){
     event.preventDefault();
-    new UpdateCell($(this), 'select');
+    var cell = new CellData(
+        $(this),
+        'select',
+        '?controller=worksheet&action=update'
+    );
+    Query.selectUpdate(cell);
 });
 
+// Inserts new row
+$('#last-row .select-cell').change(function(){
+    var cell = new CellData(
+        $(this),
+        'select',
+        '?controller=worksheet&action=insert'
+    );
+    Query.selectInsert(cell);
+});
 /*
 *
 * INSERT NEW ROW AND ERROR HANDLING
@@ -111,16 +89,15 @@ $('#last-row-select').change(function(){
 });
 
 
-$('.row-select').change(function(){
-    toggleSelectClass($(this));
-});
-
-
 /*
  *
  * HELPER FUNCTIONS
  *
  */
+
+$('.row-select').change(function(){
+    toggleSelectClass($(this));
+});
 
 function toggleErrorClass(location) {
     location.addClass('error');

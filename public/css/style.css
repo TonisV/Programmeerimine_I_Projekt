@@ -13,9 +13,7 @@
 /* Import */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
-
 /*-- 1. Globals --*/
-
 * {
     box-sizing: border-box;
 }
@@ -74,10 +72,10 @@ tfoot td input {
 td .status_wait {
     background-color: #891d21;
 }
+
 /*-- 2. Text formats --*/
 
 /*-- 3. Buttons --*/
-
 .button {
     padding: 10px 20px;
     background: transparent;
@@ -98,7 +96,6 @@ td .status_wait {
 }
 
 /*-- 4. Form inputs --*/
-
 input, select {
     width: 100%;
     border: 1px solid transparent;
@@ -123,7 +120,6 @@ input::placeholder {
 }
 
 /*-- 5. Header --*/
-
 header {
     background-color: transparent;
     border-bottom: 1px solid rgb(74, 77, 84);
@@ -137,6 +133,7 @@ header {
     border-bottom-right-radius: 70px;
     border-right: 5px solid #a52024;
 }
+
 .logo img {
     width: 40px;
 }
@@ -175,10 +172,10 @@ header {
 }
 
 /*-- 6. Content elements --*/
-
 main {
     background-color: #2e3238;
 }
+
 /* Login */
 .login-form {
     width: 200px;
@@ -197,28 +194,33 @@ work-table {
 .work-table-row:hover td input {
     background-color: #5d6067;
 }
+
 .work-table input:focus {
     outline-color: #89541d;
 }
-.error,
-.error select,
-.error input {
+
+.error {
     background-color: rgba(234, 86, 3, 0.33) !important;
 }
-.success,
-.success td,
-.success select,
-.success input {
+
+select.error {
+    background-color: rgba(234, 86, 3, 0.33) !important;
+}
+
+input.success {
     background-color: #436b28 !important;
+}
+
+select.success {
+    border: 1px solid rgba(138, 255, 4, 0.29);
+    outline-color: rgba(138, 255, 4, 0.29);
 }
 
 .paid { background-color: #436b28; }
 .waiting { background-color: #825c0c; }
 .notified { background-color: #60286b; }
 
-
 /*-- 7. Footer elements --*/
-
 footer {
     padding: 20px;
     border-top: 1px solid #4a4d54;

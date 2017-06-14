@@ -6,7 +6,15 @@ Projekti teema - Arvutiparanduses kasutatav tehniku tööleht.
 Demo: http://tigu.hk.tlu.ee/~tonis.vaimann/worksheet/
 
 	Projekt sisaldab
-	1. Kasutajate haldust.
-	2. Klientide haldust.
-	3. Seadmete ja tööde haldust.
-	4. - 
+	1. Klientide haldust.
+	2. Seadmete ja tööde haldust.
+
+Failid mis on mujalt lisatud.
+    
+    1. password.php
+    2. request.php - Minu poolt lisatud üks funktsioon
+    3. session.php - Minu poolt tehtud pisemaid täiendusi
+    4. font-awsome.min.css
+    5. normalize.css
+    6. jquery-3.2.1.min.js
+     

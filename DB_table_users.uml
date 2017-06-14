@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>ca482cdf-d18b-49af-a6da-873b3202cfd6.TABLE:tonisvaimann.tv_users</OriginalElement>
+  <nodes>
+    <node x="-521.0" y="-188.0">ca482cdf-d18b-49af-a6da-873b3202cfd6.TABLE:tonisvaimann.tv_users</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="147.0" y="92.5" />
+  <SelectedNodes>
+    <node>ca482cdf-d18b-49af-a6da-873b3202cfd6.TABLE:tonisvaimann.tv_users</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

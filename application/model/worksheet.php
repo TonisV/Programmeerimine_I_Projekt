@@ -99,6 +99,20 @@ class Worksheet_Model {
         return $worksheet;
     }
 
+    // Get work_check_out by id
+    public static function get_work_check_out($id) {
+
+        $work_id = intval($id);
+
+        $db = Db::get_instance();
+        $query = $db->prepare('SELECT * FROM ws_worksheet WHERE work_id  = :id');
+        $query->execute(array(':id'=>$work_id));
+        $result = $query->fetch();
+
+        $work_check_out = $result['work_check_out'];
+
+        return $work_check_out;
+    }
 
     // Insert new row in worksheet table and handles errors
     public static function insert_new_row() {
@@ -156,7 +170,6 @@ class Worksheet_Model {
 
         return $count == 1 ? true : false;
     }
-
 
     // Updates row cell in worksheet table and handles errors
     public static function update_row_cell() {
@@ -221,7 +234,6 @@ class Worksheet_Model {
         return false;
     }
 
-
     // Delete row in worksheet table
     public static function delete_row($id) {
         $db = Db::get_instance();
@@ -233,7 +245,6 @@ class Worksheet_Model {
 
         return $count == 1 ? true : false;
     }
-
 
     // Check row for not allowed characters
     private static function validate_row_data($row) {
@@ -251,7 +262,6 @@ class Worksheet_Model {
 
         return false;
     }
-
 
     // Validate cell data
     private static function validate_cell_data($cell) {

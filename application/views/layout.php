@@ -54,7 +54,8 @@
 
     </div>
     <script src="public/js/jquery-3.2.1.min.js"></script>
-    <script src="public/js/classes.js"></script>
-    <script src="public/js/scripts.js"></script>
+    <script src="public/js/class_helper.js"></script>
+    <script src="public/js/class_query.js"></script>
+    <script src="public/js/app.js"></script>
 </body>
 </html>

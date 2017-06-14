@@ -19,13 +19,32 @@ class Worksheet_Controller {
 
     function update() {
         $job_done = Worksheet_Model::update_row_cell();
-        echo  $job_done;
+
+        if ($job_done == 'success' && Request::post('work_status') == '4') {
+            $work_id = Request::post('work_id');
+            $work_check_out = Worksheet_Model::get_work_check_out($work_id);
+            echo $work_check_out;
+        } else {
+            echo  $job_done;
+        }
     }
 
     function delete() {
         $row_id = Request::post('work_id');
-        $job_done = Worksheet_Model::delete_row($row_id);
+        $delete_message = Request::post('client_name');
 
+        if ($delete_message === 'DELETE ROW') {
+
+            $job_done = Worksheet_Model::delete_row($row_id);
+            if ($job_done) {
+                echo 'success';
+            } else {
+                echo 'error : delete';
+            }
+
+        } else {
+            echo 'error : message';
+        }
     }
 
 }
